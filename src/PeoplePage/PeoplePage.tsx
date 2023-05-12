@@ -27,12 +27,14 @@ const PeoplePage = () => {
 
   useEffect(() => {
     setSearchParams((prev) => {
-      if (!debouncedSurnameFilterValue) {
+      if (!debouncedSurnameFilterValue && prev.has('search')) {
         prev.delete('search');
-      } else {
+        prev.set('page', '1');
+      } else if (debouncedSurnameFilterValue) {
         prev.set('search', debouncedSurnameFilterValue);
+        prev.set('page', '1');
       }
-      prev.set('page', '1');
+
 
       return prev;
     });
