@@ -1,0 +1,12 @@
+.pageLoading {
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  background: #f3f2f2;
+}
+
+.spinner {
+  min-width: 200px;
+  min-height: 200px;
+  align-self: center;
+}
